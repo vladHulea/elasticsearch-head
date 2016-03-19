@@ -93,3 +93,8 @@ To contribute an internationalisation
 # Submit a pull request
 
 !http://mobz.github.com/elasticsearch-head/screenshots/clusterOverview.png(ClusterOverview Screenshot)!
+
+h4. Deb package build
+
+@grunt debian_package@
+The compiled debian package of elasticsearch-head will be placed to ./output
