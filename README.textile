@@ -93,3 +93,18 @@ To contribute an internationalisation
 # Submit a pull request
 
 !http://mobz.github.com/elasticsearch-head/screenshots/clusterOverview.png(ClusterOverview Screenshot)!
+
+h4. Deb package build
+
+For a building of the package was used a docker image ubuntu:latest.
+All actions was done under root.
+
+@apt-get update \@
+@&& apt-get install -y git nodejs npm && ln -s /usr/bin/nodejs /usr/bin/node \@
+@&& git clone https://github.com/Tradeshift/elasticsearch-head.git \@
+@&& cd elasticsearch-head && git checkout deb-es2 && npm install \@
+@&& ./node_modules/grunt-cli/bin/grunt debian_package && ls -l output@
+
+@cd ./output@
+
+@scp elasticsearch-head_current_version_all.deb your_user_name@@@your_host_ip:/path-to-directory@
