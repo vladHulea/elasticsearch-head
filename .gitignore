@@ -4,3 +4,4 @@
 *.sublime-workspace
 .project
 node_modules
+*.deb
